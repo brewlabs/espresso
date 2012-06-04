@@ -1,0 +1,36 @@
+
+
+/* ----------------------  Boxes No Icons -------------------------- */
+
+.news { background: #f5f5f5; border: 1px solid #dadada; color: #666666; text-align: center; padding: 7px; line-height: 20px; font-size: 14px; margin: 0 0 15px; }
+.alert {  background: #FFFFCC; border: 1px solid #FFCC66; color: #996600; text-align: center; padding: 7px; line-height: 20px; font-size: 14px;  margin: 0 0 15px;}
+.info {  background: #D1F2F5; border: 1px solid #AFDEE2; color: #38878E; text-align: center; padding: 7px; line-height: 20px; font-size: 14px;  margin: 0 0 15px;}
+.warning {  background: #FFB8B8; border: 1px solid #FF8C8C; color: #BF2F2F; text-align: center; padding: 7px; line-height: 20px; font-size: 14px;  margin: 0 0 15px;}
+.download {  background: #CCFF99; border: 1px solid #99CC00; color: #336600; text-align: center; padding: 7px; line-height: 20px; font-size: 14px;  margin: 0 0 15px; }
+.es_box{padding-bottom:20px;}
+
+/* ----------------------  Drop Caps -------------------------- */
+
+.dropcap-small { font-size: 30px; float: left; font-weight: 400; line-height: 1em; padding-right: 10px; padding-bottom: 5px; padding-left: 20px; position: relative;  }
+.dropcap-big { font-size: 46px; float: left; font-weight: 400; line-height: 1em; padding-right: 7px; padding-bottom: 4px; padding-left: 20px; position: relative; }
+
+/* ----------------------  Sticky Notes -------------------------- */
+
+.stickyleft { width: 216px; height: 206px; background: url('images/stickynote.png') no-repeat; float: left; margin-right: 15px; padding: 20px 15px 0 15px; overflow:hidden; }
+
+.stickyright {  width: 226px; height: 206px; background: url('images/stickynote.png') no-repeat; float: right; padding: 20px 0 0 15px; margin-left: 15px; overflow:hidden; }
+
+.stickyright p, .stickyleft p { font-size: 22px; }
+
+/* ----------------------  Columns -------------------------- */
+
+.one_half { width:48%; }
+.one_third { width:30.66%; }
+.one_fourth { width:22%; }
+.last { margin-right:0 !important; clear:right; }
+.one_half,
+.one_third,
+.one_fourth{ position:relative; margin-right:4%; float:left; }
+.clearboth {clear:both;display:block;font-size:0;height:0;line-height:0;width:100%;}
+
+

@@ -1,0 +1,9 @@
+.container_12 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.align_center,
+.align_right {
+  text-align: left;
+}

@@ -1,0 +1,59 @@
+.image-radio-option {
+	
+}
+.image-radio-option li {
+	display: block;
+	float: left;
+	margin: 0 10px 5px 1px;
+	position: relative;
+	width: 138px;
+	height: 200px;
+}
+.image-radio-option input {
+	margin: 0 0 10px;
+}
+.image-radio-option span {
+	font-size: 11px;
+	display: block;
+	width: 136px;
+}
+.image-radio-option img {
+	margin: 0 0 0 -2px;
+}
+.espresso-box{
+	margin-bottom: 5px;
+}
+
+/* Widgets
+------------------------------------------------------------ */
+
+.genesis-widget-column {
+	float: left;
+	width: 250px;
+}
+.genesis-widget-column-right {
+	margin-left: 10px;
+}
+.genesis-widget-column-box {
+	background: #f1f1f1;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 10px 10px 0;
+}
+.genesis-widget-column-box-top {
+	margin-top: 0;
+}
+
+.genesis-pagechecklist {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.no-js .hide-if-no-js {
+	display: none;
+}
+
+.widget-control-actions {
+	clear: both;
+}

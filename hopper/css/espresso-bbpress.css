@@ -1,0 +1,6 @@
+#meta_custom_page_templates .inside table th{
+	display:none;
+}
+#meta_custom_page_templates .inside table td{
+	padding:8px 0px;
+}
