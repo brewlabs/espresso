@@ -406,6 +406,7 @@ function espresso_widget_areas_init(){
 		wp_reset_postdata();
 	}
 	
+	do_action('espresso_register_widgets');
 	
 	
 }
