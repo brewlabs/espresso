@@ -856,6 +856,8 @@ foreach( $es_style_order as $order ){
 			break;
 
 		case 'widget':
+			$es_style_array = apply_filters( 'espresso_add_section_before_widget' , $es_style_array );
+
 			/**
 			* ESPRESSO WIDGET STYLES
 			*
@@ -1041,6 +1043,7 @@ foreach( $es_style_order as $order ){
 			$es_style_array[] = array( "type" => "close");
 			}
 			//======================== END WIDGET SECTION
+			$es_style_array = apply_filters( 'espresso_add_section_after_widget' , $es_style_array );
 			break;
 
 		case 'header':
