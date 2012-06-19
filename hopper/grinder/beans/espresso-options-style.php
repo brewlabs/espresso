@@ -228,7 +228,7 @@ $option_text = apply_filters('espresso-basic-options-text', $option_text);
 
 
 //determine the order of the sections
-$es_style_order = apply_filters( 'espresso-theme-styles-order', array('fonts','button','box','hr','widget','header','content','custom-css') );
+$es_style_order = apply_filters( 'espresso-theme-styles-order', array('fonts','button','box','hr','widget','header','menu','content','custom-css') );
 $es_style_global_section_type = apply_filters('espresso-theme-styles-section-type','open');
 
 /**
@@ -1343,8 +1343,7 @@ foreach( $es_style_order as $order ){
 						"type" => "font_multi",
 						"std" => array('color'=>"#FFFFFF"),
 						"meta" => "",
-						"selector" => ".espresso-menu a:hover,.espresso-menu li.sfHover a.a-level-1,.espresso-menu .li-level-1.current-menu-item .a-level-1,
-							.espresso-menu .li-level-1.current-menu-ancestor .a-level-1",
+						"selector" => ".espresso-menu a:hover,.espresso-menu li.sfHover a.a-level-1,.espresso-menu .li-level-1.current-menu-item .a-level-1,.espresso-menu .li-level-1.current-menu-ancestor .a-level-1",
 						"style"=>'font',
 						"label"=> "Text Hover:"),
 			)	
