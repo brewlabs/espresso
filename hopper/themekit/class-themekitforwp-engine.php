@@ -557,14 +557,25 @@ class ThemeKitForWP_Engine {
                 <span class="meta-two"><?php echo $meta; ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <?php
             }
-			   if( $array['type'] == 'font_multi' ) { 
-					$style= ($count % 2) ?'clear:left;':''; ?>
-					
-					<div style="float:left; padding: 0 15px 15px;  <?php echo $style;?> ">
+
+		   if( $array['type'] == 'font_multi' ) { 
+				$style = 'float:left;';
+				$style .= ($count > 1) ? 'padding: 0 15px 15px;' : '';
+				$style .= ($count % 2) ? 'clear:left;' : ''; 
+
+				?>
+				
+				<div style="<?php echo $style;?> ">
+				<?php if( strlen($label) > 0 ): ?>
 					<span class="meta-two"><?php echo $label; ?></span>
-					<?php
-					$this->create_font_selection( $array, true ); ?><span class="meta-two"><?php echo $meta; ?></span></div><?php
-				}
+				<?php endif; ?>
+				<?php
+				$this->create_font_selection( $array, true ); ?><span class="meta-two"><?php echo $meta; ?></span>
+
+				</div>
+
+				<?php
+			}
 
 
       	}
