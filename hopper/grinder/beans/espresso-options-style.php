@@ -430,9 +430,9 @@ foreach( $es_style_order as $order ){
 				$es_title_styles = get_theme_support('espresso-page-title-styles');
 				$title_default = $es_title_styles[0];
 				$es_style_array[] = array(
-					"name" => $option_text['post_title_color']['name'],
-					"subtext"=>$option_text['post_title_color']['subtext'],
-					"desc" => $option_text['post_title_color']['desc'],
+					"name" => $option_text['page_title_color']['name'],
+					"subtext"=>$option_text['page_title_color']['subtext'],
+					"desc" => $option_text['page_title_color']['desc'],
 					"multi_selector" => true,
 					"id" => "page_title_color",
 					"type" => array(
@@ -441,7 +441,7 @@ foreach( $es_style_order as $order ){
 							"type" => "font_multi",
 							"std" => $title_default,
 							"meta" => "",
-							"selector" => "body.page .entry-title",
+							"selector" => "body.page .entry-title, body.single .entry-title",
 							"style"=>'font',
 							"label"=> "")
 				    	
