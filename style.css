@@ -344,13 +344,10 @@ Each ID has a matching class.
 -------------------------------------------------------------- */
 .widget-title {
 	color: #222;
-	padding: 5px 0;
-	border-bottom: 1px solid #c7c7c7;
-	margin-bottom: 5px;
+	margin-bottom:0px;
 }
 .widget-container {
 	padding: 0px 10px 10px;
-	border: 1px solid #c7c7c7;
 	margin-bottom: 15px;
 	font-size: .8em;
 }
@@ -654,9 +651,7 @@ ol.commentlist ul #respond{margin:0;}
 -------------------------------------------------------------- */
 .widget-title-footer {
 color: #222;
-padding: 5px 0;
-border-bottom: 1px solid #c7c7c7;
-margin-bottom: 5px;
+margin-bottom: 0px;
 }
 .widget-container-footer{
 	margin-bottom: 15px;
