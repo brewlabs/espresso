@@ -3,6 +3,8 @@
  * Bean Name: MetaBox Layout Options
  * Bean Description: Adds the Espresso Layout options to the menu
  */
+//including plugin.php for the is_plugin_active function
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 /********************* BEGIN DEFINITION OF META BOXES ***********************/
 
 // prefix of meta keys, optional
@@ -56,48 +58,52 @@ $meta_boxes[] = array(
 	)
 );
 
-$es_primary_sidebar_fields = false;
-$es_secondary_sidebar_fields = false;
+If ( !is_plugin_active('woosidebars/woosidebars.php')) {
+    //plugin is no active, so default to old functionality activated
+	$es_primary_sidebar_fields = false;
+	$es_secondary_sidebar_fields = false;
 
-foreach($layouts as $layout){
-	$l = explode("-", $layout['value'] );
-	if( in_array("sidebar1" , $l) ){
-		$es_primary_sidebar_fields = array(
-			'name' => 'Primary Widget Area',
-			'id' => $prefix . 'primary_widget',
-			'type' => 'checkbox',
-			'validate_func'=>'replace_primary_widget_area',					// radio box
-			'std' => '',
-			'label' => 'This will add a widget area that replaces the Primary Widget Area for this page.'
+	foreach($layouts as $layout){
+		$l = explode("-", $layout['value'] );
+		if( in_array("sidebar1" , $l) ){
+			$es_primary_sidebar_fields = array(
+				'name' => 'Primary Widget Area',
+				'id' => $prefix . 'primary_widget',
+				'type' => 'checkbox',
+				'validate_func'=>'replace_primary_widget_area',					// radio box
+				'std' => '',
+				'label' => 'This will add a widget area that replaces the Primary Widget Area for this page.'
+			);
+		}
+		if( in_array("sidebar2" , $l) ){
+			$es_secondary_sidebar_fields = array(
+				'name' => 'Secondary Widget Area',
+				'id' => $prefix . 'secondary_widget',
+				'type' => 'checkbox',
+				'validate_func'=>'replace_secondary_widget_area',					// radio box
+				'std' => '',
+				'label' => 'This will add a widget area that replaces the Secondary Widget Area for this page.'
+			);
+		}
+	}
+
+	if( is_array($es_primary_sidebar_fields) || is_array($es_secondary_sidebar_fields) ){
+		$sidebar_fields = array();
+
+		if( is_array($es_primary_sidebar_fields) ){ $sidebar_fields[] = $es_primary_sidebar_fields; }
+		if( is_array($es_secondary_sidebar_fields) ){ $sidebar_fields[] = $es_secondary_sidebar_fields; }
+
+		$meta_boxes[] = array(
+			'id' => 'sidebar-settings',							// meta box id, unique per meta box
+			'title' => 'Sidebar Settings',			// meta box title
+			'pages' => array('page'),	// post types, accept custom post types as well, default is array('post'); optional
+			'context' => 'normal',						// where the meta box appear: normal (default), advanced, side; optional
+			'priority' => 'high',						// order of meta box: high (default), low; optional
+
+			'fields' => $sidebar_fields
 		);
 	}
-	if( in_array("sidebar2" , $l) ){
-		$es_secondary_sidebar_fields = array(
-			'name' => 'Secondary Widget Area',
-			'id' => $prefix . 'secondary_widget',
-			'type' => 'checkbox',
-			'validate_func'=>'replace_secondary_widget_area',					// radio box
-			'std' => '',
-			'label' => 'This will add a widget area that replaces the Secondary Widget Area for this page.'
-		);
-	}
-}
 
-if( is_array($es_primary_sidebar_fields) || is_array($es_secondary_sidebar_fields) ){
-	$sidebar_fields = array();
-
-	if( is_array($es_primary_sidebar_fields) ){ $sidebar_fields[] = $es_primary_sidebar_fields; }
-	if( is_array($es_secondary_sidebar_fields) ){ $sidebar_fields[] = $es_secondary_sidebar_fields; }
-
-	$meta_boxes[] = array(
-		'id' => 'sidebar-settings',							// meta box id, unique per meta box
-		'title' => 'Sidebar Settings',			// meta box title
-		'pages' => array('page'),	// post types, accept custom post types as well, default is array('post'); optional
-		'context' => 'normal',						// where the meta box appear: normal (default), advanced, side; optional
-		'priority' => 'high',						// order of meta box: high (default), low; optional
-
-		'fields' => $sidebar_fields
-	);
 }
 
 

@@ -333,4 +333,57 @@ if (!function_exists( "espresso_pagenavi")) {
 	}
 }
 
+/**
+ * Espresso Import Options
+ *
+ * @param mixed $import_data 
+ * @return void
+ * @author Jared Harbour
+ */
+if (!function_exists( 'espresso_import_options')) {
+	function espresso_import_options($import_data){
+		global $espresso_framework;
+
+		$data = base64_decode($import_data);
+		$unserialized_data = maybe_unserialize($data);
+
+		if(is_array($unserialized_data)){
+			foreach ($unserialized_data as $key => $value) {
+			    $key = str_replace ( 'whipplehill-magazine-theme' , $espresso_framework->get_option_basename() , $key );
+
+			    update_option($key, $value);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
