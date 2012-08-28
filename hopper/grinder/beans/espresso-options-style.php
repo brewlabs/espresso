@@ -8,6 +8,8 @@
 * 	@package Espresso
 */
 
+//including plugin.php for the is_plugin_active function
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
  * Return if style options page is removed by child theme.
@@ -1417,15 +1419,38 @@ foreach( $es_style_order as $order ){
 
 				$es_style_array[] = array( "name" => "Custom CSS","type" => apply_filters('espresso-custom-css-section-type',$es_style_global_section_type) );
 				$es_style_array = apply_filters( 'espresso_custom_css_style_before' , $es_style_array );	
-				$es_style_array[] = array(
-					"name" => $option_text['custom_css']['name'],
-					"desc" => $option_text['custom_css']['desc'],
-					"subtext" => $option_text['custom_css']['subtext'],
-					"id" => "custom_css",
-					"type" => "textarea",
-					"no_reset"=>true,
-					"std" => ""
+
+				$loadEspressoCSS = true;
+				if ( is_plugin_active('jetpack/jetpack.php')) {
+
+					$active_modules = Jetpack::get_active_modules();
+					//print_r($active_modules);
+
+					if( in_array('custom-css', $active_modules) ){
+						$loadEspressoCSS = false;
+
+					}
+
+					$es_style_array[] = array("desc" => 'It looks like you have Jetpack enabled on your blog.  If you want to add some custom CSS check out the <a href="'.site_url('wp-admin/themes.php?page=editcss').'">Custom CSS</a> page.',
+						"type" => "section_description"
 					);
+
+				}
+
+				if( $loadEspressoCSS ){
+
+					$es_style_array[] = array(
+						"name" => $option_text['custom_css']['name'],
+						"desc" => $option_text['custom_css']['desc'],
+						"subtext" => $option_text['custom_css']['subtext'],
+						"id" => "custom_css",
+						"type" => "textarea",
+						"no_reset"=>true,
+						"std" => ""
+						);
+
+				}
+
 				$es_style_array = apply_filters( 'espresso_custom_css_style_after' , $es_style_array );
 				$es_style_array[] = array( "type" => "close" );
 			}
