@@ -154,6 +154,7 @@ function espresso_setup(){
 }
 add_action( 'after_setup_theme', 'espresso_setup' );
 
+
 /**
 * Register all the scripts for espresso
 *
