@@ -561,7 +561,9 @@ display:block;margin:0 auto;}
 .entry-title{ color: #21759b;} /* Set to match link color line 105 */
 .entry-title{ font-size: 2.25em; line-height: 1.25em;  margin:0;}
 .entry-content { margin: 0 0 20px;}
-.post-thumbnail{ float: left; margin: 0 15px 15px 0; padding: 3px; border: solid 1px #cdcdcd; }
+.post-thumbnail{ float: left; margin: 0 15px 15px 0; }
+.post-thumbnail img{  padding: 3px; border: solid 1px #cdcdcd; }
+html.ie8 .post-thumbnail img{ max-width:inherit; display:block; vertical-align: baseline; }
 .entry-meta { font-size: .75em; color: #888; clear: both;}
 .hentry ul{ list-style: square; }
 .hentry ul,.hentry ol {  margin: 0 0 15px 25px;}
