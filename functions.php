@@ -116,7 +116,6 @@ function espresso_setup(){
 	add_theme_support('espresso-widget-nav');
 	
 	
-	
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'espresso', TEMPLATEPATH . '/languages' );
@@ -133,6 +132,11 @@ function espresso_setup(){
 	
 	global $espresso_theme_options,$espresso_framework,$espresso_theme_styles;
 	$espresso_theme_options = get_option($espresso_framework->get_option_basename().'-options');
+
+	if( (bool)$espresso_theme_options['hide_meta_info'] ){
+		remove_theme_support('espresso-meta-information');
+	}
+
 	// Clean up the <head>
 	function removeHeadLinks() {
     	remove_action('wp_head', 'rsd_link');
