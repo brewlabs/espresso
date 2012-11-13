@@ -2,6 +2,11 @@ Espresso Change Log
 
 This will hopefully allow for some basic transparency regarding what gets changed in espresso. Anything we add to the framework will be listed here.
 
+1.0.3
+-------------------------------------
+- added button to tinymce for all loaded WordPress shortcodes.
+- a few bug fixes.
+
 1.0.2
 -------------------------------------
 - added an action to register widgets after the Espresso widget areas were registered.
