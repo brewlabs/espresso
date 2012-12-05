@@ -1,6 +1,10 @@
 Espresso Change Log
 
 This will hopefully allow for some basic transparency regarding what gets changed in espresso. Anything we add to the framework will be listed here.
+1.0.5
+-------------------------------------
+- fixed issue with page and post titles not being set to the correct colors
+
 1.0.4
 -------------------------------------
 - fixed search and tag pagination issue (search form action was causing issue with permalinks)

@@ -401,14 +401,14 @@ foreach( $es_style_order as $order ){
 							"type" => "font_multi",
 							"std" => $title_default,
 							"meta" => "",
-							"selector" => "body.blog .entry-title a",
+							"selector" => ".entry-title a",
 							"style"=>'font',
 							"label"=> ""),
 				    	array(
 							"id" => "post_title_hover",
 							"type" => "font_multi",
 							"std" => $title_hover,
-							"selector" => "body.blog .entry-title a:hover",
+							"selector" => ".entry-title a:hover",
 							"style"=>'font',
 							"meta" => "",
 							"label"=> "Hover:")
