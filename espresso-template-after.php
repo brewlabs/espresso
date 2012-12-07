@@ -19,5 +19,9 @@
 	</footer>
 	<?php get_template_part('template','after-footer'); ?><!-- template-after-footer loads here --> 
 	<?php wp_footer(); ?>
+	<?php
+		global $espresso_body_classes;
+	?>
+	<script>jQuery('body').addClass('<?php echo $espresso_body_classes; ?>');</script>
 	</body>
 </html>

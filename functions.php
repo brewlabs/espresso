@@ -1,11 +1,11 @@
 <?php
-global $espresso_framework;
+global $espresso_framework, $espresso_body_classes;
 /**
  * Define Theme Name/Version Constants
  * 
  **/
 define('PARENT_THEME_NAME', 'Espresso');
-define('PARENT_THEME_VERSION', '1.0.5');
+define('PARENT_THEME_VERSION', '1.0.6');
 define('PARENT_THEME_RELEASE_DATE', date_i18n('F j, Y', '1297144800'));
 define('ESPRESSO_NO_CLASS', 'enoclass' );
 /**
@@ -176,8 +176,6 @@ function espresso_load_scripts(){
 	if( current_theme_supports('responsive-design') ){
 		wp_enqueue_script( 'adapt', PARENT_URL.'/hopper/js/adapt.min.js', array('jquery'), '1.4.8', true );
 	}
-
-	
 }
 
 /**
@@ -417,6 +415,13 @@ function espresso_widget_areas_init(){
 }
 //=== END espresso_widget_areas_init();
 add_action('widgets_init','espresso_widget_areas_init');
+
+function espresso_get_and_add_body_classes($classes){
+	global $espresso_body_classes;
+	$espresso_body_classes = implode(' ',$classes);	
+	return $classes;
+}
+add_filter('body_class','espresso_get_and_add_body_classes', 9999);
 
 
 if ( ! function_exists( 'espresso_comment' ) ) :
