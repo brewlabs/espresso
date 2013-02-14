@@ -130,7 +130,11 @@ class ThemeKitForWP_CSSEngine {
 					}
 				break;
 				case 'font':
-					$inherit = $v[ "id" ]['face'] == 'Use Theme Font' ? true: false; 
+					//print_r($v);
+					$inherit = false;
+					if( is_array($v[ "id" ]) ){
+						$inherit = $v[ "id" ]['face'] == 'Use Theme Font' ? true: false; 
+					}
 					$font_list = $this->_tk->get_fonts($inherit);
 					
 					

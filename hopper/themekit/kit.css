@@ -11,9 +11,9 @@
 	border-top:#dddddd 1px solid;
 }
 .tk_header{
-	-webkit-border-radius: 10px 10px 0px 0px;
-	-moz-border-radius: 10px 10px 0px 0px;
-	border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 3px 3px 0px 0px;
+	-moz-border-radius: 3px 3px 0px 0px;
+	border-radius: 3px 3px 0px 0px;
 	border-left:1px solid #dddddd;
 	border-right:1px solid #dddddd;
 	border-bottom:1px solid #FFFFFF;
@@ -25,9 +25,9 @@
 	background:-webkit-gradient(linear,left bottom,left top,from(#d7d7d7),to(#E0E0E0));
 }
 .tk_header.minus{
-	-webkit-border-radius: 10px ;
-	-moz-border-radius: 10px ;
-	border-radius: 10px;
+	-webkit-border-radius: 3px ;
+	-moz-border-radius: 3px ;
+	border-radius: 3px;
 }
 .text{
 	width: 80%;

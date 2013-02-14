@@ -1,11 +1,11 @@
 <?php
-global $espresso_framework;
+global $espresso_framework, $espresso_body_classes;
 /**
  * Define Theme Name/Version Constants
  * 
  **/
 define('PARENT_THEME_NAME', 'Espresso');
-define('PARENT_THEME_VERSION', '1.0.2');
+define('PARENT_THEME_VERSION', '1.0.6');
 define('PARENT_THEME_RELEASE_DATE', date_i18n('F j, Y', '1297144800'));
 define('ESPRESSO_NO_CLASS', 'enoclass' );
 /**
@@ -116,7 +116,6 @@ function espresso_setup(){
 	add_theme_support('espresso-widget-nav');
 	
 	
-	
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'espresso', TEMPLATEPATH . '/languages' );
@@ -133,6 +132,11 @@ function espresso_setup(){
 	
 	global $espresso_theme_options,$espresso_framework,$espresso_theme_styles;
 	$espresso_theme_options = get_option($espresso_framework->get_option_basename().'-options');
+
+	if( (bool)$espresso_theme_options['hide_meta_info'] ){
+		remove_theme_support('espresso-meta-information');
+	}
+
 	// Clean up the <head>
 	function removeHeadLinks() {
     	remove_action('wp_head', 'rsd_link');
@@ -154,6 +158,7 @@ function espresso_setup(){
 }
 add_action( 'after_setup_theme', 'espresso_setup' );
 
+
 /**
 * Register all the scripts for espresso
 *
@@ -171,8 +176,6 @@ function espresso_load_scripts(){
 	if( current_theme_supports('responsive-design') ){
 		wp_enqueue_script( 'adapt', PARENT_URL.'/hopper/js/adapt.min.js', array('jquery'), '1.4.8', true );
 	}
-
-	
 }
 
 /**
@@ -412,6 +415,13 @@ function espresso_widget_areas_init(){
 }
 //=== END espresso_widget_areas_init();
 add_action('widgets_init','espresso_widget_areas_init');
+
+function espresso_get_and_add_body_classes($classes){
+	global $espresso_body_classes;
+	$espresso_body_classes = implode(' ',$classes);	
+	return $classes;
+}
+add_filter('body_class','espresso_get_and_add_body_classes', 9999);
 
 
 if ( ! function_exists( 'espresso_comment' ) ) :

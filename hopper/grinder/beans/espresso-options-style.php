@@ -401,14 +401,14 @@ foreach( $es_style_order as $order ){
 							"type" => "font_multi",
 							"std" => $title_default,
 							"meta" => "",
-							"selector" => "body.blog .entry-title a",
+							"selector" => ".entry-title a",
 							"style"=>'font',
 							"label"=> ""),
 				    	array(
 							"id" => "post_title_hover",
 							"type" => "font_multi",
 							"std" => $title_hover,
-							"selector" => "body.blog .entry-title a:hover",
+							"selector" => ".entry-title a:hover",
 							"style"=>'font',
 							"meta" => "",
 							"label"=> "Hover:")
@@ -1399,6 +1399,15 @@ foreach( $es_style_order as $order ){
 						"none" => "Don't allow any comments") 
 					);
 					
+				$es_style_array[] = array( 
+					"name" => "Hide Post Meta Information",
+					"desc" => "Post Meta information includes the date the article was posted, the post authors name, tags, categories, and comments.",
+					"id" => "hide_meta_info",
+					"type" => "checkbox",
+					"std" => "",
+					"cbtext"=> ""
+				);
+
 				$es_style_array = apply_filters( 'espresso_content_style_after' , $es_style_array );	
 
 				$es_style_array[] = array( "type" => "close" );
