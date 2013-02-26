@@ -5,7 +5,7 @@ global $espresso_framework, $espresso_body_classes;
  * 
  **/
 define('PARENT_THEME_NAME', 'Espresso');
-define('PARENT_THEME_VERSION', '1.0.6');
+define('PARENT_THEME_VERSION', '1.0.7');
 define('PARENT_THEME_RELEASE_DATE', date_i18n('F j, Y', '1297144800'));
 define('ESPRESSO_NO_CLASS', 'enoclass' );
 /**
@@ -522,5 +522,5 @@ $url .= $k . '/' . $v . '/';
 $response = wp_remote_get( $url );
 set_transient('presstrends_data', $data, 60*60*24);
 }}
-add_action('admin_init', 'espresso_presstrends');
+//add_action('admin_init', 'espresso_presstrends');
 

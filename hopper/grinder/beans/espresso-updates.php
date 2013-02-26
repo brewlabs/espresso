@@ -1,11 +1,5 @@
 <?php
-/**
- * Bean Name: Espresso Updates
- * Bean Description: Auto Updates Espresso from themebrewers.com when a new version shows up.
- */
-/**
-* Remove bean code file no longer needed as updates now come from wp.org
-*/
+
 function espresso_update_check() {
 	global $wp_version;
 	
@@ -136,3 +130,10 @@ function espresso_clear_update_transient() {
 }
 
 
+/**
+ * Bean Name: Espresso Updates
+ * Bean Description: Auto Updates Espresso from themebrewers.com when a new version shows up.
+ */
+/**
+* Remove bean code file no longer needed as updates now come from wp.org
+*/
