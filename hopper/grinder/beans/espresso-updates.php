@@ -128,12 +128,3 @@ function espresso_clear_update_transient() {
 	remove_action('admin_notices', 'espresso_update_admin');
 	
 }
-
-
-/**
- * Bean Name: Espresso Updates
- * Bean Description: Auto Updates Espresso from themebrewers.com when a new version shows up.
- */
-/**
-* Remove bean code file no longer needed as updates now come from wp.org
-*/
