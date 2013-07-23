@@ -85,17 +85,17 @@ class Espresso_Twitter_Widget extends WP_Widget {
 		$show = absint( $instance['show'] );  // # of Updates to show
 		if ( $show > 200 ) // Twitter paginates at 200 max tweets. update() should not have accepted greater than 20
 			$show = 200;
-			
+
 		$hidereplies = (bool) $instance['hidereplies'];
 		$include_retweets = (bool) $instance['includeretweets'];
 		$link_title = (bool) $instance['linktitle'];
-		
+
 		if(false !== $link_title){
 			echo "{$before_widget}{$before_title}<a href='" . esc_url( "http://twitter.com/{$account}" ) . "'>" . esc_html($title) . "</a>{$after_title}";
 		} else{
 			echo "{$before_widget}{$before_title}". esc_html($title) . "{$after_title}";
 		}
- 
+
 		if ( false === ( $tweets = get_transient( 'widget-twitter-' . $this->number ) ) ) {
 			$params = array(
 				'screen_name'=>$account, // Twitter account name
@@ -113,7 +113,7 @@ class Espresso_Twitter_Widget extends WP_Widget {
 				$params['count'] = $show;
 			if ( $include_retweets )
 				$params['include_rts'] = true;
-			$twitter_json_url = esc_url_raw( 'http://api.twitter.com/1/statuses/user_timeline.json?' . http_build_query( $params ), array( 'http', 'https' ) );
+			$twitter_json_url = esc_url_raw( 'http://api.twitter.com/1.1/statuses/user_timeline.json?' . http_build_query( $params ), array( 'http', 'https' ) );
 			unset( $params );
 			$response = wp_remote_get( $twitter_json_url, array( 'User-Agent' => 'Espresso Twitter Widget' ) );
 			$response_code = wp_remote_retrieve_response_code( $response );
@@ -227,9 +227,7 @@ class Espresso_Twitter_Widget extends WP_Widget {
 		if ( $link_title )
 			echo ' checked="checked"';
 		echo ' /> ' . esc_html__( 'Link Title to Twitter Page', 'espresso' ) . '</label></p>';
-		
-		
-		
+
 		echo'<p><label for="' . $this->get_field_id( 'show' ) . '">' . esc_html__( 'Maximum number of tweets to show:', 'espresso' ) . '
 			<select id="' . $this->get_field_id( 'show' ) . '" name="' . $this->get_field_name( 'show' ) . '">';
 

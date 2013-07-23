@@ -1,6 +1,11 @@
 Espresso Change Log
 
 This will hopefully allow for some basic transparency regarding what gets changed in espresso. Anything we add to the framework will be listed here.
+
+1.0.9
+-------------------------------------
+- Added twitter timeline widget clone from JetPack.
+
 1.0.6
 -------------------------------------
 - fixed an issue with the amazon plugin AND portfolio slideshow pro that caused the body classes to disappear
