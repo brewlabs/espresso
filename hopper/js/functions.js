@@ -10,7 +10,7 @@ espresso.adapt_callback = function(i,width,url){
       if(classes[j] !== value){
         jQuery("body").removeClass(classes[j]);
       }
-      
+
   }
   jQuery("body").addClass('width-'+value);
 
