@@ -1,10 +1,4 @@
 <?php
-/**
- * Bean Name: Twitter Widget
- * Bean Description: Display the latest updates from a Twitter user inside your theme's widgets.
- * Sort Order: 1
- */
-
 /*
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
