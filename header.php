@@ -20,6 +20,8 @@
 	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
+	<meta name="viewport" content="width=device-width">
+	
 	<?php if (is_search()) { ?>
 	<meta name="robots" content="noindex, nofollow" /> 
 	<?php } ?>
