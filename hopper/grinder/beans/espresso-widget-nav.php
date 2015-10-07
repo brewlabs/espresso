@@ -11,7 +11,7 @@ if(!current_theme_supports('espresso-widget-nav')){
 
  class Espresso_Nav_Menu_Widget extends WP_Widget {
 
-	function Espresso_Nav_Menu_Widget() {
+	function __construct() {
 		$widget_ops = array( 'description' => __('Use this widget to add a styled custom menu as a widget.') );
 		parent::WP_Widget( 'nav_menu_es', __(apply_filters('espresso-widget-title', 'Espresso Menu')), $widget_ops );
 	}

@@ -17,7 +17,6 @@ define('PARENT_URL', get_template_directory_uri());
 define('CHILD_URL', get_stylesheet_directory_uri());
 
 require_once(dirname(__FILE__) . '/hopper/grinder.php');	
-	
 
 if ( ! isset( $content_width ) ) 
 	$content_width = 500;

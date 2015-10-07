@@ -6,7 +6,7 @@
 add_action('widgets_init', create_function('', "register_widget('Espresso_Post');"));
 class Espresso_Post extends WP_Widget {
 
-	function Espresso_Post() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'espressopost', 'description' => __('Displays featured posts with thumbnails', 'espresso') );
 		$control_ops = array( 'width' => 505, 'height' => 350, 'id_base' => 'espresso-post' );
 		$this->WP_Widget( 'espresso-post', __(apply_filters('espresso-widget-title', 'Espresso Posts'), 'espresso'), $widget_ops, $control_ops );

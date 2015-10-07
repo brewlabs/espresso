@@ -240,9 +240,12 @@ class ThemeKitForWP_OptionsSave {
 									$font_name = $typography_array['face']['name'];	
 								}
 
-								if(isset($typography_array['face']) && $fontlist[$typography_array['face']]['type'] == 'google' && !in_array($font_name, $save_data['google_font_list'])){
-									array_push($save_data['google_font_list'],urlencode($fontlist[$typography_array['face']]['name']).$fontlist[$typography_array['face']]['variant']  );
+								if(isset($font_name)){
+									if(isset($typography_array['face']) && $fontlist[$typography_array['face']]['type'] == 'google' && !in_array($font_name, $save_data['google_font_list'])){
+										array_push($save_data['google_font_list'],urlencode($fontlist[$typography_array['face']]['name']).$fontlist[$typography_array['face']]['variant']  );
+									}
 								}
+								
 								
 								//update_option($id,$typography_array);
 

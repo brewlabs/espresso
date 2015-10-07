@@ -9,7 +9,7 @@
  */
 class EspressoDisplayIDs{
 
-	function &init() {
+	static function &init() {
 		static $instance = false;
 
 		if ( !$instance ) {

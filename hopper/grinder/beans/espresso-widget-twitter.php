@@ -64,7 +64,7 @@ endif;
 
 class Espresso_Twitter_Widget extends WP_Widget {
 
-	function Espresso_Twitter_Widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_twitter', 'description' => __( 'Display your tweets from Twitter', 'espresso' ) );
 		parent::WP_Widget( 'espresso-twitter', __( apply_filters('espresso-widget-title', 'Espresso Twitter'), 'espresso' ), $widget_ops );
 	}

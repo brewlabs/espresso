@@ -4,7 +4,7 @@ class EspressoGrinder {
 	/*
 	* Their can be only one!
 	*/
-	function &init() {
+	static function &init() {
 		static $instance = false;
 
 		if ( !$instance ) {
@@ -40,7 +40,7 @@ class EspressoGrinder {
 	/**
  	* Loads the modules.
 	*/
-	function load_modules() {
+	static function load_modules() {
 	
 		$modules = EspressoGrinder::get_available_modules();
 		foreach ( $modules as $module ) {
@@ -57,7 +57,7 @@ class EspressoGrinder {
 	 * List available Jetpack modules. Simply lists .php files in /modules/.
 	 * Make sure to tuck away module "library" files in a sub-directory.
 	 */
-	function get_available_modules() {
+	static function get_available_modules() {
 		static $modules = null;
 
 		if ( isset( $modules ) )
@@ -88,20 +88,20 @@ class EspressoGrinder {
 	/**
 	 * Extract a module's full path from its slug.
 	 */
-	function get_module_slug( $file ) {
+	static function get_module_slug( $file ) {
 		return str_replace( '.php', '', basename( $file ) );
 	}
 
 	/**
 	 * Generate a module's path from its slug.
 	 */
-	function get_module_path( $slug , $dir) {
+	static function get_module_path( $slug , $dir) {
 		return $dir . "/$slug.php";
 	}
 	/**
 	*
 	*/
-	function is_module( $module ) {
+	static function is_module( $module ) {
 		return !validate_file( $module );
 	}
 	
@@ -111,7 +111,7 @@ class EspressoGrinder {
 	 * plugin headers to avoid them being identified as standalone
 	 * plugins on the WordPress plugins page.
 	 */
-	function get_module( $module, $dir ) {
+	static function get_module( $module, $dir ) {
 		$headers = array(
 			'name' => 'Bean Name',
 			'modname' => 'Module Name',
@@ -135,7 +135,7 @@ class EspressoGrinder {
 	 * @param string $absolute_path The absolute path of the directory to search.
 	 * @return array Array of absolute paths to the PHP files.
 	 */
-	function glob_php( $absolute_path ) {
+	static function glob_php( $absolute_path ) {
 		$absolute_path = untrailingslashit( $absolute_path );
 		$files = array();
 		if ( !$dir = @opendir( $absolute_path ) ) {

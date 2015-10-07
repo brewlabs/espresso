@@ -11,7 +11,7 @@ class Espresso_Shortcode_Button{
 
 	var $buttonName = 'EspressoShortcodeSelector';
 
-	function &init() {
+	static function &init() {
 		static $instance = false;
 
 		if ( !$instance ) {
@@ -49,7 +49,7 @@ class Espresso_Shortcode_Button{
 		return $plugin_array;
 	}
 
-	function get_shortcodes_js(){
+	static function get_shortcodes_js(){
 		global $shortcode_tags;
 
 		$ordered_sct = array_keys($shortcode_tags);

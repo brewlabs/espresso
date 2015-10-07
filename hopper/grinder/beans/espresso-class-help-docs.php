@@ -9,7 +9,7 @@
  */
 class EspressoHelpDocs{
 
-	function load_espresso_shortcode_docs(){
+	static function load_espresso_shortcode_docs(){
 		add_theme_page("Theme Help", "Theme Help", 'administrator', 'shortcodehelp',array('EspressoHelpDocs','espresso_shortcode_docs'));
 	}
 
