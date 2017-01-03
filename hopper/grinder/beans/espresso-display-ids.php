@@ -13,13 +13,13 @@ class EspressoDisplayIDs{
 		static $instance = false;
 
 		if ( !$instance ) {
-			$instance = new EspressoDisplayIDs;
+			$instance = new EspressoDisplayIDs();
 		}
 
 		return $instance;
 	}
 
-	function EspressoDisplayIDs(){
+	function __construct(){
 
 		wp_enqueue_style('espresso-displayid-css', PARENT_URL . '/hopper/css/espresso-displayid.css');
 

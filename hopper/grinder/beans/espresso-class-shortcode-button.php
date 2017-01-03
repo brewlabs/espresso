@@ -21,7 +21,7 @@ class Espresso_Shortcode_Button{
 		return $instance;
 	}
 
-	function Espresso_Shortcode_Button(){
+	function __construct(){
 
 		// Don't bother doing this stuff if the current user lacks permissions
 		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )

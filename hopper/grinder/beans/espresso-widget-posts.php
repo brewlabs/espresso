@@ -9,7 +9,7 @@ class Espresso_Post extends WP_Widget {
 	function __construct() {
 		$widget_ops = array( 'classname' => 'espressopost', 'description' => __('Displays featured posts with thumbnails', 'espresso') );
 		$control_ops = array( 'width' => 505, 'height' => 350, 'id_base' => 'espresso-post' );
-		$this->WP_Widget( 'espresso-post', __(apply_filters('espresso-widget-title', 'Espresso Posts'), 'espresso'), $widget_ops, $control_ops );
+		parent::__construct( 'espresso-post', __(apply_filters('espresso-widget-title', 'Espresso Posts'), 'espresso'), $widget_ops, $control_ops );
 	}
 
 	function widget($args, $instance) {

@@ -42,7 +42,7 @@ class Espresso_Widget_Tabs extends WP_Widget {
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => $this->tabs_widget_idbase );
 
 		/* Create the widget. */
-		$this->WP_Widget( $this->tabs_widget_idbase, $this->tabs_widget_title, $widget_ops, $control_ops );
+		parent::__construct( $this->tabs_widget_idbase, $this->tabs_widget_title, $widget_ops, $control_ops );
 		
 		/* Load in assets for the widget. */
 		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_styles' ) );

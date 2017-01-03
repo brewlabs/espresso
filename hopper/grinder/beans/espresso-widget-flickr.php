@@ -10,7 +10,7 @@ class Espresso_Flickr extends WP_Widget {
 	function __construct() {
 		$widget_ops = array('description' => 'This Flickr widget populates photos from a Flickr ID.' );
 
-		parent::WP_Widget(false, __(apply_filters('espresso-widget-title', 'Espresso Flickr'), 'espresso'),$widget_ops);      
+		parent::__construct(false, __(apply_filters('espresso-widget-title', 'Espresso Flickr'), 'espresso'),$widget_ops);      
 	}
 
 	function widget($args, $instance) {  

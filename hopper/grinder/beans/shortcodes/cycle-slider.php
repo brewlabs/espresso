@@ -10,13 +10,13 @@ class CycleSliderPro {
 			static $instance = false;
 
 			if ( !$instance ) {
-				$instance = new CycleSliderPro;
+				$instance = new CycleSliderPro();
 			}
 
 			return $instance;
 	}
 
-	function CycleSliderPro() {
+	function __construct() {
 		add_shortcode('es-cycle', array($this, 'cycle_shortcode' ) );
 		add_action('wp_footer', array($this , 'add_script'));
 		add_filter('espresso_shortcode_box',array($this,'support_box_create'));

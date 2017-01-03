@@ -13,7 +13,7 @@ if(!current_theme_supports('espresso-widget-nav')){
 
 	function __construct() {
 		$widget_ops = array( 'description' => __('Use this widget to add a styled custom menu as a widget.') );
-		parent::WP_Widget( 'nav_menu_es', __(apply_filters('espresso-widget-title', 'Espresso Menu')), $widget_ops );
+		parent::__construct( 'nav_menu_es', __(apply_filters('espresso-widget-title', 'Espresso Menu')), $widget_ops );
 	}
 
 	function widget($args, $instance) {

@@ -26,7 +26,7 @@ class EspressoImages {
 	var $menu_id;
 
 	// Plugin initialization
-	function EspressoImages() {
+	function __construct() {
 		if ( ! function_exists( 'admin_url' ) )
 			return false;
 
