@@ -5,7 +5,7 @@ global $espresso_framework, $espresso_body_classes;
  * 
  **/
 define('PARENT_THEME_NAME', 'Espresso');
-define('PARENT_THEME_VERSION', '1.3');
+define('PARENT_THEME_VERSION', '1.3.1');
 define('PARENT_THEME_RELEASE_DATE', date_i18n('F j, Y', '1297144800'));
 define('ESPRESSO_NO_CLASS', 'enoclass' );
 /**
